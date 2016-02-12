@@ -1,6 +1,6 @@
-var path = require('path')
-var test = require('tape')
-var data = require('../data/table.json')
+import test from 'tape'
+import data from '../data/table.json'
+import utils from '../lib'
 
 var expectedResult = {
 	"row_0": {
@@ -68,7 +68,7 @@ var expectedResult = {
 	}
 }
 
-test('readTableData returns table 0_0, rows and cells', function (t) {
-	t.deepEqual(data.tables['0_0'], expectedResult, 'Sucessfully returned table data')
+test('returnTableData returns table 0_0, rows and cells', function (t) {
+	t.deepEqual(utils.returnTableData('0_0'), expectedResult, 'Sucessfully returned table data')
 	t.end()
 })
