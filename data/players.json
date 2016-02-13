@@ -1,0 +1,16 @@
+{
+	"players": {
+		"p_0": {
+			"id": "p_0",
+			"name": "JJWQ",
+			"health": "good",
+			"age": "five days",
+			"inventory": {
+				"wood": 0,
+				"meat": 4,
+				"rock": 10,
+				"teeth": 2
+			}
+		}
+	}
+}
