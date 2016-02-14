@@ -1,8 +1,9 @@
-import { listen } from './client/display'
 import $ from 'jquery'
 import utils from './lib'
+import display from './client/display'
 
 $(() => {
   utils.initGame()
-  listen()
+  utils.listen()
+  display()
 })

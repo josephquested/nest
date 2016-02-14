@@ -1,13 +1,27 @@
 'use strict'
 
-import express from 'express'
+var express = require('express')
+var app = express()
+var cors = require('cors')
+var path = require('path')
+var fs = require('fs')
 
-let app = express()
+app.use(cors({
+  origin: 'http://localhost:9966'
+}))
 
-app.get('/', (req, res) => {
-  res.send('welcome to nest')
+app.get('/tables', function (req, res) {
+  fs.readFile(path.join(__dirname, '../data/tables.json'), 'utf8', function (err, data) {
+    if (err) { console.log('ERROR: failed to read file at path /data/tables.json'); return }
+    var tables = JSON.parse(data).tables
+    res.json(tables)
+  })
 })
 
-app.listen(3000, () => {
-  console.log('Test app is listening on port 3000')
+app.get('/', function (req, res) {
+  res.send('welcome to test')
+})
+
+app.listen(3000, function () {
+  console.log('Nest listening on port 3000!')
 })
