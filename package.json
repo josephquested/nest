@@ -6,7 +6,7 @@
   "scripts": {
     "start": "budo . -d --serve bundle.js --live",
     "server": "nodemon ./server/index.js localhost 3000",
-    "build": "browserify ./client -o bundle.js -g uglifyify",
+    "build": "browserify ./client -o ./public/bundle.js",
     "test": "babel-node test/*.js | tap-spec",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
     "push": "gh-pages -d dist",

@@ -18,8 +18,12 @@ app.get('/tables', function (req, res) {
   })
 })
 
-app.get('/', function (req, res) {
-  res.send('welcome to test')
+app.get('/players', function (req, res) {
+  fs.readFile(path.join(__dirname, '../data/players.json'), 'utf8', function (err, data) {
+    if (err) { console.log('ERROR: failed to read file at path /data/players.json'); return }
+    var players = JSON.parse(data).players
+    res.json(players)
+  })
 })
 
 app.listen(3000, function () {
