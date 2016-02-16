@@ -4,12 +4,13 @@
 			"id": "p_0",
 			"name": "JJWQ",
 			"health": "good",
-			"age": "five days",
+			"hunger": "full",
+			"age": "one day",
 			"inventory": {
 				"wood": 0,
-				"meat": 4,
-				"rock": 10,
-				"teeth": 2
+				"meat": 0,
+				"rock": 0,
+				"teeth": 0
 			}
 		}
 	}
