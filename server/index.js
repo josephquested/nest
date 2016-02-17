@@ -2,56 +2,70 @@
 
 let writeFilePromise =  require('./writeFilePromise')
 let readFilePromise = require('./readFilePromise')
+
 var express = require('express')
-var app = express()
+var bodyParser = require('body-parser')
 var cors = require('cors')
 var path = require('path')
 var fs = require('fs')
 
-app.use(cors({
-  origin: 'http://localhost:9966'
-}))
+// --- EXPRESS setup
 
-app.get('/tables', function (req, res) {
+var app = express()
+app.use(cors({ origin: 'http://localhost:9966' }))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+// --- GET data requests --- //
+
+app.get('/data/tables', function (req, res) {
   readFilePromise(path.join(__dirname, '../data/tables.json'))
-  .then((data) => {
-    console.log('data in index.js', data)
-    res.send(data)
-  .error((err) => {
-    console.log('ERROR at /tables:', err)
+    .then((data) => {
+      res.send(data)
+    .error((err) => {
+      console.log('ERROR: at GET/tables:', err)
     })
   })
 })
 
-app.get('/players', function (req, res) {
+app.get('/data/players', function (req, res) {
   readFilePromise(path.join(__dirname, '../data/players.json'))
-  .then((data) => {
-    res.send(data)
-  .error((err) => {
-    console.log('ERROR at /players:', err)
+    .then((data) => {
+      res.send(data)
+    .error((err) => {
+      console.log('ERROR: at GET/players:', err)
     })
   })
 })
 
-// POST new object to table data
+// --- POST data requests
 
-// app.post('/tables', function (req, res) {
-//   let filePath = path.join(__dirname, '../data/tables.json')
+app.post('/data/tables', function (req, res) {
+  var inputData = JSON.stringify(req.body)
+  console.log('attempting to POST ', inputData, ' to path /data/tables')
+  writeFilePromise(path.join(__dirname, '../data/tables.json'), inputData)
+    .then(function () {
+      console.log('firing!!')
+      res.end('POST/data/tables attempt end')
+    .error((err) => {
+      console.log('ERROR: at POST/data/tables')
+    })
+  })
+})
 
-//   fs.readFile(filePath, 'utf8', function (err, data) {
-//     if (err) { console.log('ERROR: failed to read file at path /data/tables.json'); return }
-//     var database = JSON.parse(data)
-//     database.tables['test'] = 'test'
-//     res.database
-
-//     fs.writeFile(filePath, JSON.stringify(database), function (err, data) {
-//       if (err) { console.log('ERROR: failed to write file at path /data/tables.json'); return }
-//     })
-//   })
-// })
-
-
+app.post('/data/players', function (req, res) {
+  var inputData = JSON.stringify(req.body)
+  console.log('attempting to POST ', inputData, ' to path /data/players')
+  writeFilePromise(path.join(__dirname, '../data/tables.json'), inputData)
+    .then(function () {
+      console.log('firing!!')
+      res.end('POST/data/tables attempt end')
+    .error((err) => {
+      console.log('ERROR: at POST/data/tables')
+    })
+  })
+})
 
 app.listen(3000, function () {
-  console.log('Nest listening on port 3000!')
+  console.log('† nest server running on port three thousand †')
 })

@@ -1,337 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports={
-	"players": {
-		"p_0": {
-			"id": "p_0",
-			"name": "JJWQ",
-			"health": "good",
-			"hunger": "full",
-			"age": "one day",
-			"inventory": {
-				"wood": 0,
-				"meat": 0,
-				"rock": 0,
-				"teeth": 0
-			}
-		}
-	}
-}
-},{}],2:[function(require,module,exports){
-module.exports={
-	"tables": {
-		"t_0_0": {
-			"row_0": {
-				"cell_0_0": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_0_1": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_0_2": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_0_3": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_0_4": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_0_5": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_0_6": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				}
-			},
-			"row_1": {
-				"cell_1_0": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_1_1": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_1_2": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_1_3": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_1_4": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_1_5": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_1_6": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				}
-			},
-			"row_2": {
-				"cell_2_0": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_2_1": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_2_2": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_2_3": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_2_4": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_2_5": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_2_6": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				}
-			},
-			"row_3": {
-				"cell_3_0": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_3_1": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_3_2": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_3_3": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_3_4": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_3_5": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_3_6": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				}
-			},
-			"row_4": {
-				"cell_4_0": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_4_1": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_4_2": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_4_3": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_4_4": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_4_5": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_4_6": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				}
-			},
-			"row_5": {
-				"cell_5_0": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_5_1": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_5_2": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_5_3": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_5_4": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_5_5": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_5_6": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				}
-			},
-			"row_6": {
-				"cell_6_0": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_6_1": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_6_2": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_6_3": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_6_4": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_6_5": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				},
-				"cell_6_6": {
-					"data": {
-						"players": [],
-						"feature": {}
-					}
-				}
-			}
-		}
-	}
-}
-},{}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -345,40 +12,36 @@ var _superagent2 = _interopRequireDefault(_superagent);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var getData = function getData(dataPath, callBack) {
-  _superagent2.default.get('http://localhost:3000/' + dataPath).end(function (err, res) {
+  _superagent2.default.get('http://localhost:3000/data/' + dataPath).end(function (err, res) {
     if (err) {
-      console.log('ERROR: getData failed to get ', dataPath);return;
+      console.log('ERROR: getData failed to GET ', dataPath);return;
     }
-    callBack(res.text);
+    callBack(JSON.parse(res.text));
   });
 };
 
-// const postData = (callback) => {
-//   request
-//     .post('http://localhost:3000/tables')
-//     .end((err, res) => {
-//       if (err) { console.log('ERROR: postTable failed to get data'); return }
-//       callback(res)
-//     })
-// }
-
-exports.default = {
-  'getData': getData
-  // 'postData': postData
+var postData = function postData(dataPath, data, callBack) {
+  _superagent2.default.post('http://localhost:3000/data/' + dataPath).send(data).end(function (err, res) {
+    if (err) {
+      console.log('ERROR: postTable failed to POST', data);return;
+    }
+    callBack(res);
+  });
 };
 
-},{"superagent":23}],4:[function(require,module,exports){
+exports.default = {
+  'getData': getData,
+  'postData': postData
+};
+
+},{"superagent":21}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (database, object) {
-  // ajax.postTable((res) => console.log(JSON.parse(res.text)))
-  _ajax2.default.getData('tables', log);
-  _ajax2.default.getData('players', log);
-};
+exports.default = function (database, object) {};
 
 var _ajax = require('./ajax.js');
 
@@ -386,11 +49,7 @@ var _ajax2 = _interopRequireDefault(_ajax);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var log = function log(data) {
-  console.log(data);
-};
-
-},{"./ajax.js":3}],5:[function(require,module,exports){
+},{"./ajax.js":1}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -399,6 +58,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (playerData) {
   var player = document.createElement('div');
+  console.log('player in generate', player);
   player.id = playerData.id;
   (0, _jquery2.default)(player).addClass('player');
   (0, _jquery2.default)('#' + 'spawn').append(player);
@@ -415,7 +75,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],6:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -423,12 +83,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (tableId, exponent) {
-  var data = _lib2.default.createDatabaseObject('tables', tableId);
   var table = document.createElement('table');
 
   table.id = tableId;
-
-  // utils.createDatabaseObject('tables', 't_0_1')
 
   // generate rows
   for (var i = 0; i < exponent; i++) {
@@ -455,7 +112,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],7:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -476,7 +133,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],8:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -516,7 +173,7 @@ var _lib2 = _interopRequireDefault(_lib);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],9:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -524,11 +181,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-  var playerData = _lib2.default.returnDatabaseObject('players', 'p_0');
+  // let playerData = utils.returnDatabaseObject('players', 'p_0')
   _lib2.default.generateTableHtml('t_0_0', 7);
   _lib2.default.moveElement(_lib2.default.getElement('t_0_0'), _lib2.default.getElement('board'));
-  _lib2.default.generatePlayer(playerData);
-  _lib2.default.movePlayer(_lib2.default.getElement(playerData.id), (0, _jquery2.default)('#t_0_0 #cell_3_3'));
+  // utils.generatePlayer(playerData)
+  // utils.movePlayer(utils.getElement(playerData.id), $('#t_0_0 #cell_3_3'))
 };
 
 var _lib = require('../lib');
@@ -541,7 +198,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],10:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -558,7 +215,7 @@ var _lib2 = _interopRequireDefault(_lib);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined}],11:[function(require,module,exports){
+},{"../lib":undefined}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -580,7 +237,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],12:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -605,7 +262,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],13:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -641,7 +298,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":21}],14:[function(require,module,exports){
+},{"jquery":19}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -665,33 +322,30 @@ var _lib2 = _interopRequireDefault(_lib);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],15:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (database, inputId) {
+exports.default = function (database, returnData) {
+  console.log('within returnDatabaseObject', database, returnData);
   if (database === 'tables') {
-    return tables[database][inputId];
+    _ajax2.default.getData('tables', returnData);
   }
   if (database === 'players') {
-    return players[database][inputId];
+    _ajax2.default.getData('players', returnData);
   }
 };
 
-var _tables = require('../data/tables.json');
+var _ajax = require('./ajax.js');
 
-var tables = _interopRequireWildcard(_tables);
+var _ajax2 = _interopRequireDefault(_ajax);
 
-var _players = require('../data/players.json');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var players = _interopRequireWildcard(_players);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-},{"../data/players.json":1,"../data/tables.json":2}],16:[function(require,module,exports){
+},{"./ajax.js":1}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -715,7 +369,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],17:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -751,7 +405,7 @@ var cellData = {
   "players": []
 };
 
-},{"../lib":undefined,"jquery":21}],18:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -775,7 +429,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":21}],19:[function(require,module,exports){
+},{"../lib":undefined,"jquery":19}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -862,7 +516,7 @@ exports.default = {
   'updateCell': _updateCell2.default
 };
 
-},{"./createDatabaseObject":4,"./generatePlayer":5,"./generateTableHtml":6,"./getElement":7,"./getMovementInput":8,"./initGame":9,"./listen":10,"./moveElement":11,"./movePlayer":12,"./returnCellByDirection":13,"./returnCellByDiv":14,"./returnDatabaseObject":15,"./returnElementData":16,"./updateCell":17,"./updateElementData":18}],20:[function(require,module,exports){
+},{"./createDatabaseObject":2,"./generatePlayer":3,"./generateTableHtml":4,"./getElement":5,"./getMovementInput":6,"./initGame":7,"./listen":8,"./moveElement":9,"./movePlayer":10,"./returnCellByDirection":11,"./returnCellByDiv":12,"./returnDatabaseObject":13,"./returnElementData":14,"./updateCell":15,"./updateElementData":16}],18:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -1025,7 +679,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],21:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0
  * http://jquery.com/
@@ -10858,7 +10512,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],22:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 
 /**
  * Reduce `arr` with `fn`.
@@ -10883,7 +10537,7 @@ module.exports = function(arr, fn, initial){
   
   return curr;
 };
-},{}],23:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -12076,4 +11730,4 @@ request.put = function(url, data, fn){
 
 module.exports = request;
 
-},{"emitter":20,"reduce":22}]},{},[19]);
+},{"emitter":18,"reduce":20}]},{},[17]);
