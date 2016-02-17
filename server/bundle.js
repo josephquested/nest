@@ -1,0 +1,1 @@
+console.error("SyntaxError: /Users/josephquested/Dropbox/Games/nest/server/index.js: Unexpected token (56:0) while parsing file: /Users/josephquested/Dropbox/Games/nest/server/index.js");

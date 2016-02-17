@@ -7,10 +7,7 @@
     "start": "budo . -d --serve bundle.js --live",
     "server": "nodemon ./server/index.js localhost 3000",
     "build": "watchify ./lib -o ./public/bundle.js -v",
-    "test": "babel-node test/*.js | tap-spec",
-    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
-    "push": "gh-pages -d dist",
-    "deploy": "npm run build && npm run dist && npm run push"
+    "test": "babel-node test/*.js | tap-spec"
   },
   "browserify": {
     "transform": [
@@ -39,6 +36,7 @@
     "browserify": "^10.0.0",
     "budo": "^4.0.0",
     "cors": "^2.7.1",
+    "es6-promise": "^3.1.2",
     "express": "^4.13.4",
     "gh-pages": "^0.3.0",
     "jquery": "^2.2.0",

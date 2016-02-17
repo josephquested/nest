@@ -338,352 +338,59 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (database, id) {
+var _superagent = require('superagent');
 
-  // console.log(tables)
-
-  // , (err, res) => {
-  //   if (err) { console.log('ERROR: failed to read file system'); return }
-  //   console.log(res)
-  // })
-
-  //   if (database === 'tables') {
-  //     var object = {
-  //         id : {
-  //           "row_0": {
-  //             "cell_0_0": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_0_1": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_0_2": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_0_3": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_0_4": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_0_5": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_0_6": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             }
-  //           },
-  //           "row_1": {
-  //             "cell_1_0": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_1_1": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_1_2": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_1_3": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_1_4": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_1_5": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_1_6": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             }
-  //           },
-  //           "row_2": {
-  //             "cell_2_0": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_2_1": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_2_2": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_2_3": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_2_4": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_2_5": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_2_6": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             }
-  //           },
-  //           "row_3": {
-  //             "cell_3_0": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_3_1": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_3_2": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_3_3": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_3_4": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_3_5": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_3_6": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             }
-  //           },
-  //           "row_4": {
-  //             "cell_4_0": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_4_1": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_4_2": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_4_3": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_4_4": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_4_5": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_4_6": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             }
-  //           },
-  //           "row_5": {
-  //             "cell_5_0": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_5_1": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_5_2": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_5_3": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_5_4": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_5_5": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_5_6": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             }
-  //           },
-  //           "row_6": {
-  //             "cell_6_0": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_6_1": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_6_2": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_6_3": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_6_4": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_6_5": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             },
-  //             "cell_6_6": {
-  //               "data": {
-  //                 "players": [],
-  //                 "feature": {}
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-
-  // console.log(object)
-
-  //   if (database === 'players') { return players[database][id] }
-};
-
-var _players = require('../data/players.json');
-
-var players = _interopRequireWildcard(_players);
-
-var _path = require('path');
-
-var _path2 = _interopRequireDefault(_path);
+var _superagent2 = _interopRequireDefault(_superagent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+var getData = function getData(dataPath, callBack) {
+  _superagent2.default.get('http://localhost:3000/' + dataPath).end(function (err, res) {
+    if (err) {
+      console.log('ERROR: getData failed to get ', dataPath);return;
+    }
+    callBack(res.text);
+  });
+};
 
+// const postData = (callback) => {
+//   request
+//     .post('http://localhost:3000/tables')
+//     .end((err, res) => {
+//       if (err) { console.log('ERROR: postTable failed to get data'); return }
+//       callback(res)
+//     })
+// }
 
-var tables = "{\n\t\"tables\": {\n\t\t\"t_0_0\": {\n\t\t\t\"row_0\": {\n\t\t\t\t\"cell_0_0\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_0_1\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_0_2\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_0_3\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_0_4\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_0_5\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_0_6\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"row_1\": {\n\t\t\t\t\"cell_1_0\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_1_1\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_1_2\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_1_3\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_1_4\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_1_5\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_1_6\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"row_2\": {\n\t\t\t\t\"cell_2_0\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_2_1\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_2_2\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_2_3\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_2_4\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_2_5\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_2_6\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"row_3\": {\n\t\t\t\t\"cell_3_0\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_3_1\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_3_2\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_3_3\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_3_4\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_3_5\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_3_6\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"row_4\": {\n\t\t\t\t\"cell_4_0\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_4_1\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_4_2\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_4_3\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_4_4\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_4_5\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_4_6\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"row_5\": {\n\t\t\t\t\"cell_5_0\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_5_1\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_5_2\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_5_3\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_5_4\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_5_5\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_5_6\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"row_6\": {\n\t\t\t\t\"cell_6_0\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_6_1\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_6_2\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_6_3\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_6_4\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_6_5\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"cell_6_6\": {\n\t\t\t\t\t\"data\": {\n\t\t\t\t\t\t\"players\": [],\n\t\t\t\t\t\t\"feature\": {}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}";
+exports.default = {
+  'getData': getData
+  // 'postData': postData
+};
 
-},{"../data/players.json":1,"path":20}],4:[function(require,module,exports){
+},{"superagent":23}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (database, object) {
+  // ajax.postTable((res) => console.log(JSON.parse(res.text)))
+  _ajax2.default.getData('tables', log);
+  _ajax2.default.getData('players', log);
+};
+
+var _ajax = require('./ajax.js');
+
+var _ajax2 = _interopRequireDefault(_ajax);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var log = function log(data) {
+  console.log(data);
+};
+
+},{"./ajax.js":3}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -708,7 +415,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],5:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -716,7 +423,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (tableId, exponent) {
-  var data = _lib2.default.returnDatabaseObject('tables', tableId);
+  var data = _lib2.default.createDatabaseObject('tables', tableId);
   var table = document.createElement('table');
 
   table.id = tableId;
@@ -748,7 +455,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],6:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -769,7 +476,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],7:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -809,7 +516,7 @@ var _lib2 = _interopRequireDefault(_lib);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],8:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -834,7 +541,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],9:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -851,7 +558,7 @@ var _lib2 = _interopRequireDefault(_lib);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined}],10:[function(require,module,exports){
+},{"../lib":undefined}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -873,7 +580,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],11:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -881,10 +588,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (player, destination) {
+  var oldCell = _lib2.default.returnCellByDiv(player);
   _lib2.default.moveElement((0, _jquery2.default)(player), (0, _jquery2.default)(destination));
   _lib2.default.updateElementData(player, _lib2.default.returnDatabaseObject('players', (0, _jquery2.default)(player).attr('id')));
   _lib2.default.updateCell(_lib2.default.returnCellByDiv(player));
-  // utils.updateCell(destination)
+  _lib2.default.updateCell(oldCell);
 };
 
 var _lib = require('../lib');
@@ -897,7 +605,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],12:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -933,7 +641,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":19}],13:[function(require,module,exports){
+},{"jquery":21}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -957,7 +665,7 @@ var _lib2 = _interopRequireDefault(_lib);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],14:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -983,7 +691,7 @@ var players = _interopRequireWildcard(_players);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-},{"../data/players.json":1,"../data/tables.json":2}],15:[function(require,module,exports){
+},{"../data/players.json":1,"../data/tables.json":2}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1007,7 +715,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],16:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1022,9 +730,10 @@ exports.default = function (cell) {
       cell.append('<p>' + _lib2.default.returnElementData(children[i]).name + '</p>');
     }
 
-    // if (!$(children[i]).hasClass('player')) {
-    //   cell.empty()
-    // }
+    // this will need to change when there are other objects on tiles, not just players
+    if (!(0, _jquery2.default)(children[i]).hasClass('player')) {
+      cell.empty();
+    }
   }
 };
 
@@ -1042,7 +751,7 @@ var cellData = {
   "players": []
 };
 
-},{"../lib":undefined,"jquery":19}],17:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1066,7 +775,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],18:[function(require,module,exports){
+},{"../lib":undefined,"jquery":21}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1153,7 +862,170 @@ exports.default = {
   'updateCell': _updateCell2.default
 };
 
-},{"./createDatabaseObject":3,"./generatePlayer":4,"./generateTableHtml":5,"./getElement":6,"./getMovementInput":7,"./initGame":8,"./listen":9,"./moveElement":10,"./movePlayer":11,"./returnCellByDirection":12,"./returnCellByDiv":13,"./returnDatabaseObject":14,"./returnElementData":15,"./updateCell":16,"./updateElementData":17}],19:[function(require,module,exports){
+},{"./createDatabaseObject":4,"./generatePlayer":5,"./generateTableHtml":6,"./getElement":7,"./getMovementInput":8,"./initGame":9,"./listen":10,"./moveElement":11,"./movePlayer":12,"./returnCellByDirection":13,"./returnCellByDiv":14,"./returnDatabaseObject":15,"./returnElementData":16,"./updateCell":17,"./updateElementData":18}],20:[function(require,module,exports){
+
+/**
+ * Expose `Emitter`.
+ */
+
+module.exports = Emitter;
+
+/**
+ * Initialize a new `Emitter`.
+ *
+ * @api public
+ */
+
+function Emitter(obj) {
+  if (obj) return mixin(obj);
+};
+
+/**
+ * Mixin the emitter properties.
+ *
+ * @param {Object} obj
+ * @return {Object}
+ * @api private
+ */
+
+function mixin(obj) {
+  for (var key in Emitter.prototype) {
+    obj[key] = Emitter.prototype[key];
+  }
+  return obj;
+}
+
+/**
+ * Listen on the given `event` with `fn`.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.on =
+Emitter.prototype.addEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
+    .push(fn);
+  return this;
+};
+
+/**
+ * Adds an `event` listener that will be invoked a single
+ * time then automatically removed.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.once = function(event, fn){
+  function on() {
+    this.off(event, on);
+    fn.apply(this, arguments);
+  }
+
+  on.fn = fn;
+  this.on(event, on);
+  return this;
+};
+
+/**
+ * Remove the given callback for `event` or all
+ * registered callbacks.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.off =
+Emitter.prototype.removeListener =
+Emitter.prototype.removeAllListeners =
+Emitter.prototype.removeEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks['$' + event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks['$' + event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i < callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+};
+
+/**
+ * Emit `event` with the given args.
+ *
+ * @param {String} event
+ * @param {Mixed} ...
+ * @return {Emitter}
+ */
+
+Emitter.prototype.emit = function(event){
+  this._callbacks = this._callbacks || {};
+  var args = [].slice.call(arguments, 1)
+    , callbacks = this._callbacks['$' + event];
+
+  if (callbacks) {
+    callbacks = callbacks.slice(0);
+    for (var i = 0, len = callbacks.length; i < len; ++i) {
+      callbacks[i].apply(this, args);
+    }
+  }
+
+  return this;
+};
+
+/**
+ * Return array of callbacks for `event`.
+ *
+ * @param {String} event
+ * @return {Array}
+ * @api public
+ */
+
+Emitter.prototype.listeners = function(event){
+  this._callbacks = this._callbacks || {};
+  return this._callbacks['$' + event] || [];
+};
+
+/**
+ * Check if this emitter has `event` handlers.
+ *
+ * @param {String} event
+ * @return {Boolean}
+ * @api public
+ */
+
+Emitter.prototype.hasListeners = function(event){
+  return !! this.listeners(event).length;
+};
+
+},{}],21:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0
  * http://jquery.com/
@@ -10986,325 +10858,1222 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],20:[function(require,module,exports){
-(function (process){
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
+},{}],22:[function(require,module,exports){
 
-// resolves . and .. elements in a path array with directory names there
-// must be no slashes, empty elements, or device names (c:\) in the array
-// (so also no leading and trailing slashes - it does not distinguish
-// relative and absolute paths)
-function normalizeArray(parts, allowAboveRoot) {
-  // if the path tries to go above the root, `up` ends up > 0
-  var up = 0;
-  for (var i = parts.length - 1; i >= 0; i--) {
-    var last = parts[i];
-    if (last === '.') {
-      parts.splice(i, 1);
-    } else if (last === '..') {
-      parts.splice(i, 1);
-      up++;
-    } else if (up) {
-      parts.splice(i, 1);
-      up--;
-    }
+/**
+ * Reduce `arr` with `fn`.
+ *
+ * @param {Array} arr
+ * @param {Function} fn
+ * @param {Mixed} initial
+ *
+ * TODO: combatible error handling?
+ */
+
+module.exports = function(arr, fn, initial){  
+  var idx = 0;
+  var len = arr.length;
+  var curr = arguments.length == 3
+    ? initial
+    : arr[idx++];
+
+  while (idx < len) {
+    curr = fn.call(null, curr, arr[idx], ++idx, arr);
   }
+  
+  return curr;
+};
+},{}],23:[function(require,module,exports){
+/**
+ * Module dependencies.
+ */
 
-  // if the path is allowed to go above the root, restore leading ..s
-  if (allowAboveRoot) {
-    for (; up--; up) {
-      parts.unshift('..');
-    }
-  }
+var Emitter = require('emitter');
+var reduce = require('reduce');
 
-  return parts;
+/**
+ * Root reference for iframes.
+ */
+
+var root;
+if (typeof window !== 'undefined') { // Browser window
+  root = window;
+} else if (typeof self !== 'undefined') { // Web Worker
+  root = self;
+} else { // Other environments
+  root = this;
 }
 
-// Split a filename into [root, dir, basename, ext], unix version
-// 'root' is just a slash, or nothing.
-var splitPathRe =
-    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-var splitPath = function(filename) {
-  return splitPathRe.exec(filename).slice(1);
-};
+/**
+ * Noop.
+ */
 
-// path.resolve([from ...], to)
-// posix version
-exports.resolve = function() {
-  var resolvedPath = '',
-      resolvedAbsolute = false;
+function noop(){};
 
-  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-    var path = (i >= 0) ? arguments[i] : process.cwd();
+/**
+ * Check if `obj` is a host object,
+ * we don't want to serialize these :)
+ *
+ * TODO: future proof, move to compoent land
+ *
+ * @param {Object} obj
+ * @return {Boolean}
+ * @api private
+ */
 
-    // Skip empty and invalid entries
-    if (typeof path !== 'string') {
-      throw new TypeError('Arguments to path.resolve must be strings');
-    } else if (!path) {
-      continue;
-    }
+function isHost(obj) {
+  var str = {}.toString.call(obj);
 
-    resolvedPath = path + '/' + resolvedPath;
-    resolvedAbsolute = path.charAt(0) === '/';
+  switch (str) {
+    case '[object File]':
+    case '[object Blob]':
+    case '[object FormData]':
+      return true;
+    default:
+      return false;
   }
-
-  // At this point the path should be resolved to a full absolute path, but
-  // handle relative paths to be safe (might happen when process.cwd() fails)
-
-  // Normalize the path
-  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-    return !!p;
-  }), !resolvedAbsolute).join('/');
-
-  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-};
-
-// path.normalize(path)
-// posix version
-exports.normalize = function(path) {
-  var isAbsolute = exports.isAbsolute(path),
-      trailingSlash = substr(path, -1) === '/';
-
-  // Normalize the path
-  path = normalizeArray(filter(path.split('/'), function(p) {
-    return !!p;
-  }), !isAbsolute).join('/');
-
-  if (!path && !isAbsolute) {
-    path = '.';
-  }
-  if (path && trailingSlash) {
-    path += '/';
-  }
-
-  return (isAbsolute ? '/' : '') + path;
-};
-
-// posix version
-exports.isAbsolute = function(path) {
-  return path.charAt(0) === '/';
-};
-
-// posix version
-exports.join = function() {
-  var paths = Array.prototype.slice.call(arguments, 0);
-  return exports.normalize(filter(paths, function(p, index) {
-    if (typeof p !== 'string') {
-      throw new TypeError('Arguments to path.join must be strings');
-    }
-    return p;
-  }).join('/'));
-};
-
-
-// path.relative(from, to)
-// posix version
-exports.relative = function(from, to) {
-  from = exports.resolve(from).substr(1);
-  to = exports.resolve(to).substr(1);
-
-  function trim(arr) {
-    var start = 0;
-    for (; start < arr.length; start++) {
-      if (arr[start] !== '') break;
-    }
-
-    var end = arr.length - 1;
-    for (; end >= 0; end--) {
-      if (arr[end] !== '') break;
-    }
-
-    if (start > end) return [];
-    return arr.slice(start, end - start + 1);
-  }
-
-  var fromParts = trim(from.split('/'));
-  var toParts = trim(to.split('/'));
-
-  var length = Math.min(fromParts.length, toParts.length);
-  var samePartsLength = length;
-  for (var i = 0; i < length; i++) {
-    if (fromParts[i] !== toParts[i]) {
-      samePartsLength = i;
-      break;
-    }
-  }
-
-  var outputParts = [];
-  for (var i = samePartsLength; i < fromParts.length; i++) {
-    outputParts.push('..');
-  }
-
-  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-
-  return outputParts.join('/');
-};
-
-exports.sep = '/';
-exports.delimiter = ':';
-
-exports.dirname = function(path) {
-  var result = splitPath(path),
-      root = result[0],
-      dir = result[1];
-
-  if (!root && !dir) {
-    // No dirname whatsoever
-    return '.';
-  }
-
-  if (dir) {
-    // It has a dirname, strip trailing slash
-    dir = dir.substr(0, dir.length - 1);
-  }
-
-  return root + dir;
-};
-
-
-exports.basename = function(path, ext) {
-  var f = splitPath(path)[2];
-  // TODO: make this comparison case-insensitive on windows?
-  if (ext && f.substr(-1 * ext.length) === ext) {
-    f = f.substr(0, f.length - ext.length);
-  }
-  return f;
-};
-
-
-exports.extname = function(path) {
-  return splitPath(path)[3];
-};
-
-function filter (xs, f) {
-    if (xs.filter) return xs.filter(f);
-    var res = [];
-    for (var i = 0; i < xs.length; i++) {
-        if (f(xs[i], i, xs)) res.push(xs[i]);
-    }
-    return res;
 }
 
-// String.prototype.substr - negative index don't work in IE8
-var substr = 'ab'.substr(-1) === 'b'
-    ? function (str, start, len) { return str.substr(start, len) }
-    : function (str, start, len) {
-        if (start < 0) start = str.length + start;
-        return str.substr(start, len);
+/**
+ * Determine XHR.
+ */
+
+request.getXHR = function () {
+  if (root.XMLHttpRequest
+      && (!root.location || 'file:' != root.location.protocol
+          || !root.ActiveXObject)) {
+    return new XMLHttpRequest;
+  } else {
+    try { return new ActiveXObject('Microsoft.XMLHTTP'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP.6.0'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP.3.0'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch(e) {}
+  }
+  return false;
+};
+
+/**
+ * Removes leading and trailing whitespace, added to support IE.
+ *
+ * @param {String} s
+ * @return {String}
+ * @api private
+ */
+
+var trim = ''.trim
+  ? function(s) { return s.trim(); }
+  : function(s) { return s.replace(/(^\s*|\s*$)/g, ''); };
+
+/**
+ * Check if `obj` is an object.
+ *
+ * @param {Object} obj
+ * @return {Boolean}
+ * @api private
+ */
+
+function isObject(obj) {
+  return obj === Object(obj);
+}
+
+/**
+ * Serialize the given `obj`.
+ *
+ * @param {Object} obj
+ * @return {String}
+ * @api private
+ */
+
+function serialize(obj) {
+  if (!isObject(obj)) return obj;
+  var pairs = [];
+  for (var key in obj) {
+    if (null != obj[key]) {
+      pushEncodedKeyValuePair(pairs, key, obj[key]);
+        }
+      }
+  return pairs.join('&');
+}
+
+/**
+ * Helps 'serialize' with serializing arrays.
+ * Mutates the pairs array.
+ *
+ * @param {Array} pairs
+ * @param {String} key
+ * @param {Mixed} val
+ */
+
+function pushEncodedKeyValuePair(pairs, key, val) {
+  if (Array.isArray(val)) {
+    return val.forEach(function(v) {
+      pushEncodedKeyValuePair(pairs, key, v);
+    });
+  }
+  pairs.push(encodeURIComponent(key)
+    + '=' + encodeURIComponent(val));
+}
+
+/**
+ * Expose serialization method.
+ */
+
+ request.serializeObject = serialize;
+
+ /**
+  * Parse the given x-www-form-urlencoded `str`.
+  *
+  * @param {String} str
+  * @return {Object}
+  * @api private
+  */
+
+function parseString(str) {
+  var obj = {};
+  var pairs = str.split('&');
+  var parts;
+  var pair;
+
+  for (var i = 0, len = pairs.length; i < len; ++i) {
+    pair = pairs[i];
+    parts = pair.split('=');
+    obj[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+  }
+
+  return obj;
+}
+
+/**
+ * Expose parser.
+ */
+
+request.parseString = parseString;
+
+/**
+ * Default MIME type map.
+ *
+ *     superagent.types.xml = 'application/xml';
+ *
+ */
+
+request.types = {
+  html: 'text/html',
+  json: 'application/json',
+  xml: 'application/xml',
+  urlencoded: 'application/x-www-form-urlencoded',
+  'form': 'application/x-www-form-urlencoded',
+  'form-data': 'application/x-www-form-urlencoded'
+};
+
+/**
+ * Default serialization map.
+ *
+ *     superagent.serialize['application/xml'] = function(obj){
+ *       return 'generated xml here';
+ *     };
+ *
+ */
+
+ request.serialize = {
+   'application/x-www-form-urlencoded': serialize,
+   'application/json': JSON.stringify
+ };
+
+ /**
+  * Default parsers.
+  *
+  *     superagent.parse['application/xml'] = function(str){
+  *       return { object parsed from str };
+  *     };
+  *
+  */
+
+request.parse = {
+  'application/x-www-form-urlencoded': parseString,
+  'application/json': JSON.parse
+};
+
+/**
+ * Parse the given header `str` into
+ * an object containing the mapped fields.
+ *
+ * @param {String} str
+ * @return {Object}
+ * @api private
+ */
+
+function parseHeader(str) {
+  var lines = str.split(/\r?\n/);
+  var fields = {};
+  var index;
+  var line;
+  var field;
+  var val;
+
+  lines.pop(); // trailing CRLF
+
+  for (var i = 0, len = lines.length; i < len; ++i) {
+    line = lines[i];
+    index = line.indexOf(':');
+    field = line.slice(0, index).toLowerCase();
+    val = trim(line.slice(index + 1));
+    fields[field] = val;
+  }
+
+  return fields;
+}
+
+/**
+ * Check if `mime` is json or has +json structured syntax suffix.
+ *
+ * @param {String} mime
+ * @return {Boolean}
+ * @api private
+ */
+
+function isJSON(mime) {
+  return /[\/+]json\b/.test(mime);
+}
+
+/**
+ * Return the mime type for the given `str`.
+ *
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+function type(str){
+  return str.split(/ *; */).shift();
+};
+
+/**
+ * Return header field parameters.
+ *
+ * @param {String} str
+ * @return {Object}
+ * @api private
+ */
+
+function params(str){
+  return reduce(str.split(/ *; */), function(obj, str){
+    var parts = str.split(/ *= */)
+      , key = parts.shift()
+      , val = parts.shift();
+
+    if (key && val) obj[key] = val;
+    return obj;
+  }, {});
+};
+
+/**
+ * Initialize a new `Response` with the given `xhr`.
+ *
+ *  - set flags (.ok, .error, etc)
+ *  - parse header
+ *
+ * Examples:
+ *
+ *  Aliasing `superagent` as `request` is nice:
+ *
+ *      request = superagent;
+ *
+ *  We can use the promise-like API, or pass callbacks:
+ *
+ *      request.get('/').end(function(res){});
+ *      request.get('/', function(res){});
+ *
+ *  Sending data can be chained:
+ *
+ *      request
+ *        .post('/user')
+ *        .send({ name: 'tj' })
+ *        .end(function(res){});
+ *
+ *  Or passed to `.send()`:
+ *
+ *      request
+ *        .post('/user')
+ *        .send({ name: 'tj' }, function(res){});
+ *
+ *  Or passed to `.post()`:
+ *
+ *      request
+ *        .post('/user', { name: 'tj' })
+ *        .end(function(res){});
+ *
+ * Or further reduced to a single call for simple cases:
+ *
+ *      request
+ *        .post('/user', { name: 'tj' }, function(res){});
+ *
+ * @param {XMLHTTPRequest} xhr
+ * @param {Object} options
+ * @api private
+ */
+
+function Response(req, options) {
+  options = options || {};
+  this.req = req;
+  this.xhr = this.req.xhr;
+  // responseText is accessible only if responseType is '' or 'text' and on older browsers
+  this.text = ((this.req.method !='HEAD' && (this.xhr.responseType === '' || this.xhr.responseType === 'text')) || typeof this.xhr.responseType === 'undefined')
+     ? this.xhr.responseText
+     : null;
+  this.statusText = this.req.xhr.statusText;
+  this.setStatusProperties(this.xhr.status);
+  this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
+  // getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
+  // getResponseHeader still works. so we get content-type even if getting
+  // other headers fails.
+  this.header['content-type'] = this.xhr.getResponseHeader('content-type');
+  this.setHeaderProperties(this.header);
+  this.body = this.req.method != 'HEAD'
+    ? this.parseBody(this.text ? this.text : this.xhr.response)
+    : null;
+}
+
+/**
+ * Get case-insensitive `field` value.
+ *
+ * @param {String} field
+ * @return {String}
+ * @api public
+ */
+
+Response.prototype.get = function(field){
+  return this.header[field.toLowerCase()];
+};
+
+/**
+ * Set header related properties:
+ *
+ *   - `.type` the content type without params
+ *
+ * A response of "Content-Type: text/plain; charset=utf-8"
+ * will provide you with a `.type` of "text/plain".
+ *
+ * @param {Object} header
+ * @api private
+ */
+
+Response.prototype.setHeaderProperties = function(header){
+  // content-type
+  var ct = this.header['content-type'] || '';
+  this.type = type(ct);
+
+  // params
+  var obj = params(ct);
+  for (var key in obj) this[key] = obj[key];
+};
+
+/**
+ * Parse the given body `str`.
+ *
+ * Used for auto-parsing of bodies. Parsers
+ * are defined on the `superagent.parse` object.
+ *
+ * @param {String} str
+ * @return {Mixed}
+ * @api private
+ */
+
+Response.prototype.parseBody = function(str){
+  var parse = request.parse[this.type];
+  return parse && str && (str.length || str instanceof Object)
+    ? parse(str)
+    : null;
+};
+
+/**
+ * Set flags such as `.ok` based on `status`.
+ *
+ * For example a 2xx response will give you a `.ok` of __true__
+ * whereas 5xx will be __false__ and `.error` will be __true__. The
+ * `.clientError` and `.serverError` are also available to be more
+ * specific, and `.statusType` is the class of error ranging from 1..5
+ * sometimes useful for mapping respond colors etc.
+ *
+ * "sugar" properties are also defined for common cases. Currently providing:
+ *
+ *   - .noContent
+ *   - .badRequest
+ *   - .unauthorized
+ *   - .notAcceptable
+ *   - .notFound
+ *
+ * @param {Number} status
+ * @api private
+ */
+
+Response.prototype.setStatusProperties = function(status){
+  // handle IE9 bug: http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
+  if (status === 1223) {
+    status = 204;
+  }
+
+  var type = status / 100 | 0;
+
+  // status / class
+  this.status = this.statusCode = status;
+  this.statusType = type;
+
+  // basics
+  this.info = 1 == type;
+  this.ok = 2 == type;
+  this.clientError = 4 == type;
+  this.serverError = 5 == type;
+  this.error = (4 == type || 5 == type)
+    ? this.toError()
+    : false;
+
+  // sugar
+  this.accepted = 202 == status;
+  this.noContent = 204 == status;
+  this.badRequest = 400 == status;
+  this.unauthorized = 401 == status;
+  this.notAcceptable = 406 == status;
+  this.notFound = 404 == status;
+  this.forbidden = 403 == status;
+};
+
+/**
+ * Return an `Error` representative of this response.
+ *
+ * @return {Error}
+ * @api public
+ */
+
+Response.prototype.toError = function(){
+  var req = this.req;
+  var method = req.method;
+  var url = req.url;
+
+  var msg = 'cannot ' + method + ' ' + url + ' (' + this.status + ')';
+  var err = new Error(msg);
+  err.status = this.status;
+  err.method = method;
+  err.url = url;
+
+  return err;
+};
+
+/**
+ * Expose `Response`.
+ */
+
+request.Response = Response;
+
+/**
+ * Initialize a new `Request` with the given `method` and `url`.
+ *
+ * @param {String} method
+ * @param {String} url
+ * @api public
+ */
+
+function Request(method, url) {
+  var self = this;
+  Emitter.call(this);
+  this._query = this._query || [];
+  this.method = method;
+  this.url = url;
+  this.header = {};
+  this._header = {};
+  this.on('end', function(){
+    var err = null;
+    var res = null;
+
+    try {
+      res = new Response(self);
+    } catch(e) {
+      err = new Error('Parser is unable to parse the response');
+      err.parse = true;
+      err.original = e;
+      // issue #675: return the raw response if the response parsing fails
+      err.rawResponse = self.xhr && self.xhr.responseText ? self.xhr.responseText : null;
+      return self.callback(err);
     }
-;
 
-}).call(this,require('_process'))
-},{"_process":21}],21:[function(require,module,exports){
-// shim for using process in browser
+    self.emit('response', res);
 
-var process = module.exports = {};
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
+    if (err) {
+      return self.callback(err, res);
+    }
 
-function cleanUpNextTick() {
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
+    if (res.status >= 200 && res.status < 300) {
+      return self.callback(err, res);
+    }
+
+    var new_err = new Error(res.statusText || 'Unsuccessful HTTP response');
+    new_err.original = err;
+    new_err.response = res;
+    new_err.status = res.status;
+
+    self.callback(new_err, res);
+  });
+}
+
+/**
+ * Mixin `Emitter`.
+ */
+
+Emitter(Request.prototype);
+
+/**
+ * Allow for extension
+ */
+
+Request.prototype.use = function(fn) {
+  fn(this);
+  return this;
+}
+
+/**
+ * Set timeout to `ms`.
+ *
+ * @param {Number} ms
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.timeout = function(ms){
+  this._timeout = ms;
+  return this;
+};
+
+/**
+ * Clear previous timeout.
+ *
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.clearTimeout = function(){
+  this._timeout = 0;
+  clearTimeout(this._timer);
+  return this;
+};
+
+/**
+ * Abort the request, and clear potential timeout.
+ *
+ * @return {Request}
+ * @api public
+ */
+
+Request.prototype.abort = function(){
+  if (this.aborted) return;
+  this.aborted = true;
+  this.xhr.abort();
+  this.clearTimeout();
+  this.emit('abort');
+  return this;
+};
+
+/**
+ * Set header `field` to `val`, or multiple fields with one object.
+ *
+ * Examples:
+ *
+ *      req.get('/')
+ *        .set('Accept', 'application/json')
+ *        .set('X-API-Key', 'foobar')
+ *        .end(callback);
+ *
+ *      req.get('/')
+ *        .set({ Accept: 'application/json', 'X-API-Key': 'foobar' })
+ *        .end(callback);
+ *
+ * @param {String|Object} field
+ * @param {String} val
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.set = function(field, val){
+  if (isObject(field)) {
+    for (var key in field) {
+      this.set(key, field[key]);
+    }
+    return this;
+  }
+  this._header[field.toLowerCase()] = val;
+  this.header[field] = val;
+  return this;
+};
+
+/**
+ * Remove header `field`.
+ *
+ * Example:
+ *
+ *      req.get('/')
+ *        .unset('User-Agent')
+ *        .end(callback);
+ *
+ * @param {String} field
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.unset = function(field){
+  delete this._header[field.toLowerCase()];
+  delete this.header[field];
+  return this;
+};
+
+/**
+ * Get case-insensitive header `field` value.
+ *
+ * @param {String} field
+ * @return {String}
+ * @api private
+ */
+
+Request.prototype.getHeader = function(field){
+  return this._header[field.toLowerCase()];
+};
+
+/**
+ * Set Content-Type to `type`, mapping values from `request.types`.
+ *
+ * Examples:
+ *
+ *      superagent.types.xml = 'application/xml';
+ *
+ *      request.post('/')
+ *        .type('xml')
+ *        .send(xmlstring)
+ *        .end(callback);
+ *
+ *      request.post('/')
+ *        .type('application/xml')
+ *        .send(xmlstring)
+ *        .end(callback);
+ *
+ * @param {String} type
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.type = function(type){
+  this.set('Content-Type', request.types[type] || type);
+  return this;
+};
+
+/**
+ * Force given parser
+ *
+ * Sets the body parser no matter type.
+ *
+ * @param {Function}
+ * @api public
+ */
+
+Request.prototype.parse = function(fn){
+  this._parser = fn;
+  return this;
+};
+
+/**
+ * Set Accept to `type`, mapping values from `request.types`.
+ *
+ * Examples:
+ *
+ *      superagent.types.json = 'application/json';
+ *
+ *      request.get('/agent')
+ *        .accept('json')
+ *        .end(callback);
+ *
+ *      request.get('/agent')
+ *        .accept('application/json')
+ *        .end(callback);
+ *
+ * @param {String} accept
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.accept = function(type){
+  this.set('Accept', request.types[type] || type);
+  return this;
+};
+
+/**
+ * Set Authorization field value with `user` and `pass`.
+ *
+ * @param {String} user
+ * @param {String} pass
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.auth = function(user, pass){
+  var str = btoa(user + ':' + pass);
+  this.set('Authorization', 'Basic ' + str);
+  return this;
+};
+
+/**
+* Add query-string `val`.
+*
+* Examples:
+*
+*   request.get('/shoes')
+*     .query('size=10')
+*     .query({ color: 'blue' })
+*
+* @param {Object|String} val
+* @return {Request} for chaining
+* @api public
+*/
+
+Request.prototype.query = function(val){
+  if ('string' != typeof val) val = serialize(val);
+  if (val) this._query.push(val);
+  return this;
+};
+
+/**
+ * Write the field `name` and `val` for "multipart/form-data"
+ * request bodies.
+ *
+ * ``` js
+ * request.post('/upload')
+ *   .field('foo', 'bar')
+ *   .end(callback);
+ * ```
+ *
+ * @param {String} name
+ * @param {String|Blob|File} val
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.field = function(name, val){
+  if (!this._formData) this._formData = new root.FormData();
+  this._formData.append(name, val);
+  return this;
+};
+
+/**
+ * Queue the given `file` as an attachment to the specified `field`,
+ * with optional `filename`.
+ *
+ * ``` js
+ * request.post('/upload')
+ *   .attach(new Blob(['<a id="a"><b id="b">hey!</b></a>'], { type: "text/html"}))
+ *   .end(callback);
+ * ```
+ *
+ * @param {String} field
+ * @param {Blob|File} file
+ * @param {String} filename
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.attach = function(field, file, filename){
+  if (!this._formData) this._formData = new root.FormData();
+  this._formData.append(field, file, filename || file.name);
+  return this;
+};
+
+/**
+ * Send `data` as the request body, defaulting the `.type()` to "json" when
+ * an object is given.
+ *
+ * Examples:
+ *
+ *       // manual json
+ *       request.post('/user')
+ *         .type('json')
+ *         .send('{"name":"tj"}')
+ *         .end(callback)
+ *
+ *       // auto json
+ *       request.post('/user')
+ *         .send({ name: 'tj' })
+ *         .end(callback)
+ *
+ *       // manual x-www-form-urlencoded
+ *       request.post('/user')
+ *         .type('form')
+ *         .send('name=tj')
+ *         .end(callback)
+ *
+ *       // auto x-www-form-urlencoded
+ *       request.post('/user')
+ *         .type('form')
+ *         .send({ name: 'tj' })
+ *         .end(callback)
+ *
+ *       // defaults to x-www-form-urlencoded
+  *      request.post('/user')
+  *        .send('name=tobi')
+  *        .send('species=ferret')
+  *        .end(callback)
+ *
+ * @param {String|Object} data
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.send = function(data){
+  var obj = isObject(data);
+  var type = this.getHeader('Content-Type');
+
+  // merge
+  if (obj && isObject(this._data)) {
+    for (var key in data) {
+      this._data[key] = data[key];
+    }
+  } else if ('string' == typeof data) {
+    if (!type) this.type('form');
+    type = this.getHeader('Content-Type');
+    if ('application/x-www-form-urlencoded' == type) {
+      this._data = this._data
+        ? this._data + '&' + data
+        : data;
     } else {
-        queueIndex = -1;
+      this._data = (this._data || '') + data;
     }
-    if (queue.length) {
-        drainQueue();
+  } else {
+    this._data = data;
+  }
+
+  if (!obj || isHost(data)) return this;
+  if (!type) this.type('json');
+  return this;
+};
+
+/**
+ * Invoke the callback with `err` and `res`
+ * and handle arity check.
+ *
+ * @param {Error} err
+ * @param {Response} res
+ * @api private
+ */
+
+Request.prototype.callback = function(err, res){
+  var fn = this._callback;
+  this.clearTimeout();
+  fn(err, res);
+};
+
+/**
+ * Invoke callback with x-domain error.
+ *
+ * @api private
+ */
+
+Request.prototype.crossDomainError = function(){
+  var err = new Error('Request has been terminated\nPossible causes: the network is offline, Origin is not allowed by Access-Control-Allow-Origin, the page is being unloaded, etc.');
+  err.crossDomain = true;
+
+  err.status = this.status;
+  err.method = this.method;
+  err.url = this.url;
+
+  this.callback(err);
+};
+
+/**
+ * Invoke callback with timeout error.
+ *
+ * @api private
+ */
+
+Request.prototype.timeoutError = function(){
+  var timeout = this._timeout;
+  var err = new Error('timeout of ' + timeout + 'ms exceeded');
+  err.timeout = timeout;
+  this.callback(err);
+};
+
+/**
+ * Enable transmission of cookies with x-domain requests.
+ *
+ * Note that for this to work the origin must not be
+ * using "Access-Control-Allow-Origin" with a wildcard,
+ * and also must set "Access-Control-Allow-Credentials"
+ * to "true".
+ *
+ * @api public
+ */
+
+Request.prototype.withCredentials = function(){
+  this._withCredentials = true;
+  return this;
+};
+
+/**
+ * Initiate request, invoking callback `fn(res)`
+ * with an instanceof `Response`.
+ *
+ * @param {Function} fn
+ * @return {Request} for chaining
+ * @api public
+ */
+
+Request.prototype.end = function(fn){
+  var self = this;
+  var xhr = this.xhr = request.getXHR();
+  var query = this._query.join('&');
+  var timeout = this._timeout;
+  var data = this._formData || this._data;
+
+  // store callback
+  this._callback = fn || noop;
+
+  // state change
+  xhr.onreadystatechange = function(){
+    if (4 != xhr.readyState) return;
+
+    // In IE9, reads to any property (e.g. status) off of an aborted XHR will
+    // result in the error "Could not complete the operation due to error c00c023f"
+    var status;
+    try { status = xhr.status } catch(e) { status = 0; }
+
+    if (0 == status) {
+      if (self.timedout) return self.timeoutError();
+      if (self.aborted) return;
+      return self.crossDomainError();
     }
+    self.emit('end');
+  };
+
+  // progress
+  var handleProgress = function(e){
+    if (e.total > 0) {
+      e.percent = e.loaded / e.total * 100;
+    }
+    e.direction = 'download';
+    self.emit('progress', e);
+  };
+  if (this.hasListeners('progress')) {
+    xhr.onprogress = handleProgress;
+  }
+  try {
+    if (xhr.upload && this.hasListeners('progress')) {
+      xhr.upload.onprogress = handleProgress;
+    }
+  } catch(e) {
+    // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn't exist.
+    // Reported here:
+    // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web-worker-context
+  }
+
+  // timeout
+  if (timeout && !this._timer) {
+    this._timer = setTimeout(function(){
+      self.timedout = true;
+      self.abort();
+    }, timeout);
+  }
+
+  // querystring
+  if (query) {
+    query = request.serializeObject(query);
+    this.url += ~this.url.indexOf('?')
+      ? '&' + query
+      : '?' + query;
+  }
+
+  // initiate request
+  xhr.open(this.method, this.url, true);
+
+  // CORS
+  if (this._withCredentials) xhr.withCredentials = true;
+
+  // body
+  if ('GET' != this.method && 'HEAD' != this.method && 'string' != typeof data && !isHost(data)) {
+    // serialize stuff
+    var contentType = this.getHeader('Content-Type');
+    var serialize = this._parser || request.serialize[contentType ? contentType.split(';')[0] : ''];
+    if (!serialize && isJSON(contentType)) serialize = request.serialize['application/json'];
+    if (serialize) data = serialize(data);
+  }
+
+  // set header fields
+  for (var field in this.header) {
+    if (null == this.header[field]) continue;
+    xhr.setRequestHeader(field, this.header[field]);
+  }
+
+  // send stuff
+  this.emit('request', this);
+
+  // IE11 xhr.send(undefined) sends 'undefined' string as POST payload (instead of nothing)
+  // We need null here if data is undefined
+  xhr.send(typeof data !== 'undefined' ? data : null);
+  return this;
+};
+
+/**
+ * Faux promise support
+ *
+ * @param {Function} fulfill
+ * @param {Function} reject
+ * @return {Request}
+ */
+
+Request.prototype.then = function (fulfill, reject) {
+  return this.end(function(err, res) {
+    err ? reject(err) : fulfill(res);
+  });
 }
 
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = setTimeout(cleanUpNextTick);
-    draining = true;
+/**
+ * Expose `Request`.
+ */
 
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    clearTimeout(timeout);
+request.Request = Request;
+
+/**
+ * Issue a request:
+ *
+ * Examples:
+ *
+ *    request('GET', '/users').end(callback)
+ *    request('/users').end(callback)
+ *    request('/users', callback)
+ *
+ * @param {String} method
+ * @param {String|Function} url or callback
+ * @return {Request}
+ * @api public
+ */
+
+function request(method, url) {
+  // callback
+  if ('function' == typeof url) {
+    return new Request('GET', method).end(url);
+  }
+
+  // url first
+  if (1 == arguments.length) {
+    return new Request('GET', method);
+  }
+
+  return new Request(method, url);
 }
 
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        setTimeout(drainQueue, 0);
-    }
+/**
+ * GET `url` with optional callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed|Function} data or fn
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.get = function(url, data, fn){
+  var req = request('GET', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.query(data);
+  if (fn) req.end(fn);
+  return req;
 };
 
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
+/**
+ * HEAD `url` with optional callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed|Function} data or fn
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
 
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
+request.head = function(url, data, fn){
+  var req = request('HEAD', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.send(data);
+  if (fn) req.end(fn);
+  return req;
 };
 
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
+/**
+ * DELETE `url` with optional callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
 
-},{}]},{},[18]);
+function del(url, fn){
+  var req = request('DELETE', url);
+  if (fn) req.end(fn);
+  return req;
+};
+
+request['del'] = del;
+request['delete'] = del;
+
+/**
+ * PATCH `url` with optional `data` and callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed} data
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.patch = function(url, data, fn){
+  var req = request('PATCH', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.send(data);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * POST `url` with optional `data` and callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed} data
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.post = function(url, data, fn){
+  var req = request('POST', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.send(data);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * PUT `url` with optional `data` and callback `fn(res)`.
+ *
+ * @param {String} url
+ * @param {Mixed|Function} data or fn
+ * @param {Function} fn
+ * @return {Request}
+ * @api public
+ */
+
+request.put = function(url, data, fn){
+  var req = request('PUT', url);
+  if ('function' == typeof data) fn = data, data = null;
+  if (data) req.send(data);
+  if (fn) req.end(fn);
+  return req;
+};
+
+/**
+ * Expose `request`.
+ */
+
+module.exports = request;
+
+},{"emitter":20,"reduce":22}]},{},[19]);
