@@ -4,7 +4,7 @@
   "description": "videogame",
   "main": "index.js",
   "scripts": {
-    "start": "budo ./public --dir ./public --serve bundle.js --live",
+    "start": "budo ./lib --dir ./public --serve bundle.js --live",
     "server": "nodemon ./server/index.js localhost 3000",
     "build": "watchify ./lib -o ./public/bundle.js -v",
     "test": "babel-node test/*.js | tap-spec"
