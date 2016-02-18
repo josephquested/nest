@@ -34,7 +34,7 @@ exports.default = {
   'postData': postData
 };
 
-},{"superagent":21}],2:[function(require,module,exports){
+},{"superagent":22}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62,12 +62,12 @@ exports.default = function (playerData) {
   player.id = playerData.id;
   (0, _jquery2.default)(player).addClass('player');
   (0, _jquery2.default)('#' + 'spawn').append(player);
-  _lib2.default.updateElementData(player, playerData);
+  (0, _updateElementData2.default)(player, playerData);
 };
 
-var _lib = require('../lib');
+var _updateElementData = require('./updateElementData');
 
-var _lib2 = _interopRequireDefault(_lib);
+var _updateElementData2 = _interopRequireDefault(_updateElementData);
 
 var _jquery = require('jquery');
 
@@ -75,7 +75,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],4:[function(require,module,exports){
+},{"./updateElementData":17,"jquery":20}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -102,17 +102,13 @@ exports.default = function (tableId, exponent) {
   (0, _jquery2.default)('#spawn').append(table);
 };
 
-var _lib = require('../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],5:[function(require,module,exports){
+},{"jquery":20}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123,17 +119,13 @@ exports.default = function (id) {
   return (0, _jquery2.default)('#' + id);
 };
 
-var _lib = require('../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],6:[function(require,module,exports){
+},{"jquery":20}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -156,9 +148,9 @@ exports.default = function () {
       direction = 'west';
     }
     if (direction !== undefined) {
-      var player = _lib2.default.getElement('p_0');
-      var destinationCell = _lib2.default.returnCellByDirection(_lib2.default.returnCellByDiv(player), direction);
-      _lib2.default.movePlayer(player, destinationCell);
+      var player = (0, _getElement2.default)('p_0');
+      var destinationCell = (0, _returnCellByDirection2.default)((0, _returnCellByDiv2.default)(player), direction);
+      (0, _movePlayer2.default)(player, destinationCell);
     }
   });
 };
@@ -167,13 +159,25 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _lib = require('../lib');
+var _getElement = require('./getElement');
 
-var _lib2 = _interopRequireDefault(_lib);
+var _getElement2 = _interopRequireDefault(_getElement);
+
+var _movePlayer = require('./movePlayer');
+
+var _movePlayer2 = _interopRequireDefault(_movePlayer);
+
+var _returnCellByDirection = require('./returnCellByDirection');
+
+var _returnCellByDirection2 = _interopRequireDefault(_returnCellByDirection);
+
+var _returnCellByDiv = require('./returnCellByDiv');
+
+var _returnCellByDiv2 = _interopRequireDefault(_returnCellByDiv);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],7:[function(require,module,exports){
+},{"./getElement":5,"./movePlayer":10,"./returnCellByDirection":11,"./returnCellByDiv":12,"jquery":20}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -182,23 +186,31 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
   // let playerData = utils.returnDatabaseObject('players', 'p_0')
-  _lib2.default.generateTableHtml('t_0_0', 7);
-  _lib2.default.moveElement(_lib2.default.getElement('t_0_0'), _lib2.default.getElement('board'));
+  (0, _generateTableHtml2.default)('t_0_0', 7);
+  moveElement((0, _getElement2.default)('t_0_0'), (0, _getElement2.default)('board'));
   // utils.generatePlayer(playerData)
   // utils.movePlayer(utils.getElement(playerData.id), $('#t_0_0 #cell_3_3'))
 };
-
-var _lib = require('../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
 
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _movePlayer = require('./movePlayer');
+
+var _movePlayer2 = _interopRequireDefault(_movePlayer);
+
+var _generateTableHtml = require('./generateTableHtml');
+
+var _generateTableHtml2 = _interopRequireDefault(_generateTableHtml);
+
+var _getElement = require('./getElement');
+
+var _getElement2 = _interopRequireDefault(_getElement);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],8:[function(require,module,exports){
+},{"./generateTableHtml":4,"./getElement":5,"./movePlayer":10,"jquery":20}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -206,16 +218,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-  _lib2.default.getMovementInput();
+  (0, _getMovementInput2.default)();
 };
 
-var _lib = require('../lib');
+var _getMovementInput = require('./getMovementInput');
 
-var _lib2 = _interopRequireDefault(_lib);
+var _getMovementInput2 = _interopRequireDefault(_getMovementInput);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined}],9:[function(require,module,exports){
+},{"./getMovementInput":6}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -227,17 +239,13 @@ exports.default = function (element, destination) {
 	destination.append(element);
 };
 
-var _lib = require('../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],10:[function(require,module,exports){
+},{"jquery":20}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -245,24 +253,44 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (player, destination) {
-  var oldCell = _lib2.default.returnCellByDiv(player);
-  _lib2.default.moveElement((0, _jquery2.default)(player), (0, _jquery2.default)(destination));
-  _lib2.default.updateElementData(player, _lib2.default.returnDatabaseObject('players', (0, _jquery2.default)(player).attr('id')));
-  _lib2.default.updateCell(_lib2.default.returnCellByDiv(player));
-  _lib2.default.updateCell(oldCell);
+  var oldCell = utils.returnCellByDiv(player);
+  moveElement((0, _jquery2.default)(player), (0, _jquery2.default)(destination));
+  (0, _updateElementData2.default)(player, (0, _returnDatabaseObject2.default)('players', (0, _jquery2.default)(player).attr('id')));
+  (0, _updateCell2.default)((0, _returnCellByDiv2.default)(player));
+  (0, _updateCell2.default)(oldCell);
 };
-
-var _lib = require('../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
 
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _getElement = require('./getElement');
+
+var _getElement2 = _interopRequireDefault(_getElement);
+
+var _movePlayer = require('./movePlayer');
+
+var _movePlayer2 = _interopRequireDefault(_movePlayer);
+
+var _updateCell = require('./updateCell');
+
+var _updateCell2 = _interopRequireDefault(_updateCell);
+
+var _returnCellByDiv = require('./returnCellByDiv');
+
+var _returnCellByDiv2 = _interopRequireDefault(_returnCellByDiv);
+
+var _updateElementData = require('./updateElementData');
+
+var _updateElementData2 = _interopRequireDefault(_updateElementData);
+
+var _returnDatabaseObject = require('./returnDatabaseObject');
+
+var _returnDatabaseObject2 = _interopRequireDefault(_returnDatabaseObject);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],11:[function(require,module,exports){
+},{"./getElement":5,"./movePlayer":10,"./returnCellByDiv":12,"./returnDatabaseObject":13,"./updateCell":15,"./updateElementData":17,"jquery":20}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -298,7 +326,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":19}],12:[function(require,module,exports){
+},{"jquery":20}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -316,13 +344,9 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _lib = require('../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],13:[function(require,module,exports){
+},{"jquery":20}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -330,13 +354,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (database, returnData) {
-  console.log('within returnDatabaseObject', database, returnData);
-  if (database === 'tables') {
-    _ajax2.default.getData('tables', returnData);
-  }
-  if (database === 'players') {
-    _ajax2.default.getData('players', returnData);
-  }
+  _ajax2.default.getData(database, returnData);
 };
 
 var _ajax = require('./ajax.js');
@@ -356,12 +374,8 @@ exports.default = function (element) {
   if (!element) {
     console.log('Reading data failed on element', element);return;
   }
-  return (0, _jquery2.default)(element).data("data");
+  return (0, _jquery2.default)(element).data('data');
 };
-
-var _lib = require('../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
 
 var _jquery = require('jquery');
 
@@ -369,7 +383,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],15:[function(require,module,exports){
+},{"jquery":20}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -381,7 +395,7 @@ exports.default = function (cell) {
 
   for (var i = 0; i < children.length; i++) {
     if ((0, _jquery2.default)(children[i]).hasClass('player')) {
-      cell.append('<p>' + _lib2.default.returnElementData(children[i]).name + '</p>');
+      cell.append('<p>' + (0, _returnElementData2.default)(children[i]).name + '</p>');
     }
 
     // this will need to change when there are other objects on tiles, not just players
@@ -391,9 +405,9 @@ exports.default = function (cell) {
   }
 };
 
-var _lib = require('../lib');
+var _returnElementData = require('./returnElementData');
 
-var _lib2 = _interopRequireDefault(_lib);
+var _returnElementData2 = _interopRequireDefault(_returnElementData);
 
 var _jquery = require('jquery');
 
@@ -405,7 +419,24 @@ var cellData = {
   "players": []
 };
 
-},{"../lib":undefined,"jquery":19}],16:[function(require,module,exports){
+},{"./returnElementData":14,"jquery":20}],16:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (database, object, returnData) {
+  _ajax2.default.postData(database, object, returnData);
+};
+
+var _ajax = require('./ajax.js');
+
+var _ajax2 = _interopRequireDefault(_ajax);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+},{"./ajax.js":1}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -416,12 +447,8 @@ exports.default = function (element, data) {
   if (!element || !data) {
     console.log('Appending ', data, ' to ', element, 'failed!');return;
   }
-  (0, _jquery2.default)(element).data("data", data);
+  (0, _jquery2.default)(element).data('data', data);
 };
-
-var _lib = require('../lib');
-
-var _lib2 = _interopRequireDefault(_lib);
 
 var _jquery = require('jquery');
 
@@ -429,7 +456,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../lib":undefined,"jquery":19}],17:[function(require,module,exports){
+},{"jquery":20}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -439,6 +466,10 @@ Object.defineProperty(exports, "__esModule", {
 var _returnDatabaseObject = require('./returnDatabaseObject');
 
 var _returnDatabaseObject2 = _interopRequireDefault(_returnDatabaseObject);
+
+var _updateDatabaseObject = require('./updateDatabaseObject');
+
+var _updateDatabaseObject2 = _interopRequireDefault(_updateDatabaseObject);
 
 var _createDatabaseObject = require('./createDatabaseObject');
 
@@ -505,6 +536,7 @@ exports.default = {
   'movePlayer': _movePlayer2.default,
   'getElement': _getElement2.default,
   'returnDatabaseObject': _returnDatabaseObject2.default,
+  'updateDatabaseObject': _updateDatabaseObject2.default,
   'createDatabaseObject': _createDatabaseObject2.default,
   'updateElementData': _updateElementData2.default,
   'returnElementData': _returnElementData2.default,
@@ -516,7 +548,7 @@ exports.default = {
   'updateCell': _updateCell2.default
 };
 
-},{"./createDatabaseObject":2,"./generatePlayer":3,"./generateTableHtml":4,"./getElement":5,"./getMovementInput":6,"./initGame":7,"./listen":8,"./moveElement":9,"./movePlayer":10,"./returnCellByDirection":11,"./returnCellByDiv":12,"./returnDatabaseObject":13,"./returnElementData":14,"./updateCell":15,"./updateElementData":16}],18:[function(require,module,exports){
+},{"./createDatabaseObject":2,"./generatePlayer":3,"./generateTableHtml":4,"./getElement":5,"./getMovementInput":6,"./initGame":7,"./listen":8,"./moveElement":9,"./movePlayer":10,"./returnCellByDirection":11,"./returnCellByDiv":12,"./returnDatabaseObject":13,"./returnElementData":14,"./updateCell":15,"./updateDatabaseObject":16,"./updateElementData":17}],19:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -679,7 +711,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0
  * http://jquery.com/
@@ -10512,7 +10544,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 
 /**
  * Reduce `arr` with `fn`.
@@ -10537,7 +10569,7 @@ module.exports = function(arr, fn, initial){
   
   return curr;
 };
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -11730,4 +11762,4 @@ request.put = function(url, data, fn){
 
 module.exports = request;
 
-},{"emitter":18,"reduce":20}]},{},[17]);
+},{"emitter":19,"reduce":21}]},{},[18]);
