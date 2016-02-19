@@ -187,7 +187,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
   // let playerData = utils.returnDatabaseObject('players', 'p_0')
   (0, _generateTableHtml2.default)('t_0_0', 7);
-  moveElement((0, _getElement2.default)('t_0_0'), (0, _getElement2.default)('board'));
+  (0, _moveElement2.default)((0, _getElement2.default)('t_0_0'), (0, _getElement2.default)('board'));
   // utils.generatePlayer(playerData)
   // utils.movePlayer(utils.getElement(playerData.id), $('#t_0_0 #cell_3_3'))
 };
@@ -208,9 +208,13 @@ var _getElement = require('./getElement');
 
 var _getElement2 = _interopRequireDefault(_getElement);
 
+var _moveElement = require('./moveElement');
+
+var _moveElement2 = _interopRequireDefault(_moveElement);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./generateTableHtml":4,"./getElement":5,"./movePlayer":10,"jquery":21}],8:[function(require,module,exports){
+},{"./generateTableHtml":4,"./getElement":5,"./moveElement":9,"./movePlayer":10,"jquery":21}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -562,7 +566,7 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
-  console.log('i exist');
+  console.log('†');
   _utils2.default.initGame();
   _utils2.default.listen();
 });
