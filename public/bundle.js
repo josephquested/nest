@@ -559,22 +559,15 @@ var _utils = require('./utils');
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _index = require('../public/index');
-
-var _index2 = _interopRequireDefault(_index);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-console.log('Root index!');
 
 (0, _jquery2.default)(function () {
   console.log('i exist');
   _utils2.default.initGame();
   _utils2.default.listen();
-  (0, _index2.default)();
 });
 
-},{"../public/index":24,"./utils":18,"jquery":21}],20:[function(require,module,exports){
+},{"./utils":18,"jquery":21}],20:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -11788,9 +11781,4 @@ request.put = function(url, data, fn){
 
 module.exports = request;
 
-},{"emitter":20,"reduce":22}],24:[function(require,module,exports){
-'use strict';
-
-console.log('yelp');
-
-},{}]},{},[19]);
+},{"emitter":20,"reduce":22}]},{},[19]);
