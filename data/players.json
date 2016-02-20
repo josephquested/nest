@@ -2,6 +2,10 @@
 	"players": {
 		"p_0": {
 			"id": "p_0",
+			"location": {
+				"table": "",
+				"cell": ""
+			},
 			"name": "JJWQ",
 			"health": "good",
 			"hunger": "full",

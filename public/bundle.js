@@ -58,11 +58,10 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (playerData) {
   var player = document.createElement('div');
-  console.log('player in generate', player);
   player.id = playerData.id;
   (0, _jquery2.default)(player).addClass('player');
   (0, _jquery2.default)('#' + 'spawn').append(player);
-  (0, _updateElementData2.default)(player, playerData);
+  (0, _updateElementData2.default)((0, _jquery2.default)(player), playerData);
 };
 
 var _updateElementData = require('./updateElementData');
@@ -135,6 +134,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
   (0, _jquery2.default)(document).keyup(function (e) {
     var direction = undefined;
+
     if (e.which === 38) {
       direction = 'north';
     }
@@ -148,9 +148,16 @@ exports.default = function () {
       direction = 'west';
     }
     if (direction !== undefined) {
-      var player = (0, _getElement2.default)('p_0');
-      var destinationCell = (0, _returnCellByDirection2.default)((0, _returnCellByDiv2.default)(player), direction);
-      (0, _movePlayer2.default)(player, destinationCell);
+
+      _utils2.default.returnDatabaseObject('players', function (data) {
+        var player = (0, _jquery2.default)('#p_0');
+        var oldCell = _utils2.default.returnCellByDiv(player);
+        var destinationCell = _utils2.default.returnCellByDirection(_utils2.default.returnCellByDiv(player), direction);
+        _utils2.default.movePlayer(player, destinationCell);
+        _utils2.default.updateElementData(player, data.players.p_0);
+        _utils2.default.updateCell((0, _jquery2.default)(destinationCell));
+        _utils2.default.updateCell((0, _jquery2.default)(oldCell));
+      });
     }
   });
 };
@@ -159,25 +166,13 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _getElement = require('./getElement');
+var _utils = require('./utils');
 
-var _getElement2 = _interopRequireDefault(_getElement);
-
-var _movePlayer = require('./movePlayer');
-
-var _movePlayer2 = _interopRequireDefault(_movePlayer);
-
-var _returnCellByDirection = require('./returnCellByDirection');
-
-var _returnCellByDirection2 = _interopRequireDefault(_returnCellByDirection);
-
-var _returnCellByDiv = require('./returnCellByDiv');
-
-var _returnCellByDiv2 = _interopRequireDefault(_returnCellByDiv);
+var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./getElement":5,"./movePlayer":10,"./returnCellByDirection":11,"./returnCellByDiv":12,"jquery":21}],7:[function(require,module,exports){
+},{"./utils":18,"jquery":21}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -185,36 +180,27 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-  // let playerData = utils.returnDatabaseObject('players', 'p_0')
-  (0, _generateTableHtml2.default)('t_0_0', 7);
-  (0, _moveElement2.default)((0, _getElement2.default)('t_0_0'), (0, _getElement2.default)('board'));
-  // utils.generatePlayer(playerData)
-  // utils.movePlayer(utils.getElement(playerData.id), $('#t_0_0 #cell_3_3'))
+  _utils2.default.returnDatabaseObject('players', function (data) {
+    _utils2.default.generatePlayer(data.players.p_0);
+    _utils2.default.generateTableHtml('t_0_0', 7);
+    _utils2.default.moveElement(_utils2.default.getElement('t_0_0'), _utils2.default.getElement('board'));
+    _utils2.default.moveElement(_utils2.default.getElement('p_0'), (0, _jquery2.default)('#t_0_0 #cell_3_3'));
+    _utils2.default.updateElementData((0, _jquery2.default)('#p_0'), data.players.p_0);
+    _utils2.default.updateCell((0, _jquery2.default)('#t_0_0 #cell_3_3'));
+  });
 };
 
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _movePlayer = require('./movePlayer');
+var _utils = require('./utils');
 
-var _movePlayer2 = _interopRequireDefault(_movePlayer);
-
-var _generateTableHtml = require('./generateTableHtml');
-
-var _generateTableHtml2 = _interopRequireDefault(_generateTableHtml);
-
-var _getElement = require('./getElement');
-
-var _getElement2 = _interopRequireDefault(_getElement);
-
-var _moveElement = require('./moveElement');
-
-var _moveElement2 = _interopRequireDefault(_moveElement);
+var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./generateTableHtml":4,"./getElement":5,"./moveElement":9,"./movePlayer":10,"jquery":21}],8:[function(require,module,exports){
+},{"./utils":18,"jquery":21}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -257,44 +243,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (player, destination) {
-  var oldCell = utils.returnCellByDiv(player);
-  moveElement((0, _jquery2.default)(player), (0, _jquery2.default)(destination));
-  (0, _updateElementData2.default)(player, (0, _returnDatabaseObject2.default)('players', (0, _jquery2.default)(player).attr('id')));
-  (0, _updateCell2.default)((0, _returnCellByDiv2.default)(player));
-  (0, _updateCell2.default)(oldCell);
+  _utils2.default.moveElement((0, _jquery2.default)(player), (0, _jquery2.default)(destination));
 };
 
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _getElement = require('./getElement');
+var _utils = require('./utils');
 
-var _getElement2 = _interopRequireDefault(_getElement);
-
-var _movePlayer = require('./movePlayer');
-
-var _movePlayer2 = _interopRequireDefault(_movePlayer);
-
-var _updateCell = require('./updateCell');
-
-var _updateCell2 = _interopRequireDefault(_updateCell);
-
-var _returnCellByDiv = require('./returnCellByDiv');
-
-var _returnCellByDiv2 = _interopRequireDefault(_returnCellByDiv);
-
-var _updateElementData = require('./updateElementData');
-
-var _updateElementData2 = _interopRequireDefault(_updateElementData);
-
-var _returnDatabaseObject = require('./returnDatabaseObject');
-
-var _returnDatabaseObject2 = _interopRequireDefault(_returnDatabaseObject);
+var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./getElement":5,"./movePlayer":10,"./returnCellByDiv":12,"./returnDatabaseObject":13,"./updateCell":15,"./updateElementData":17,"jquery":21}],11:[function(require,module,exports){
+},{"./utils":18,"jquery":21}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -396,15 +358,12 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (cell) {
   var children = cell.children();
-
   for (var i = 0; i < children.length; i++) {
     if ((0, _jquery2.default)(children[i]).hasClass('player')) {
       cell.append('<p>' + (0, _returnElementData2.default)(children[i]).name + '</p>');
-    }
-
-    // this will need to change when there are other objects on tiles, not just players
-    if (!(0, _jquery2.default)(children[i]).hasClass('player')) {
+    } else {
       cell.empty();
+      //  this part needs to change when cells contain more than just players
     }
   }
 };
@@ -451,7 +410,7 @@ exports.default = function (element, data) {
   if (!element || !data) {
     console.log('Appending ', data, ' to ', element, 'failed!');return;
   }
-  (0, _jquery2.default)(element).data('data', data);
+  element.data('data', data);
 };
 
 var _jquery = require('jquery');
