@@ -81,7 +81,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (tableId, exponent) {
+exports.default = function (tableId, exponent, returnTable) {
   var table = document.createElement('table');
 
   _utils2.default.returnDatabaseObject('tables', function (data) {
@@ -109,6 +109,7 @@ exports.default = function (tableId, exponent) {
         _utils2.default.updateElementData((0, _jquery2.default)(cell), data.tables[tableId][row.id][cell.id]);
       }
     }
+    returnTable(table);
   });
 };
 
@@ -189,11 +190,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
   _utils2.default.returnDatabaseObject('players', function (data) {
     _utils2.default.generatePlayer(data.players.p_0);
-    _utils2.default.generateTableHtml('t_0_0', 7);
-    _utils2.default.moveElement(_utils2.default.getElement('t_0_0'), _utils2.default.getElement('board'));
-    _utils2.default.moveElement(_utils2.default.getElement('p_0'), (0, _jquery2.default)('#t_0_0 #cell_3_3'));
-    _utils2.default.updateElementData((0, _jquery2.default)('#p_0'), data.players.p_0);
-    _utils2.default.updateCell((0, _jquery2.default)('#t_0_0 #cell_3_3'));
+    _utils2.default.generateTableHtml('t_0_0', 7, function (table) {
+      _utils2.default.moveElement(table, _utils2.default.getElement('board'));
+      _utils2.default.moveElement(_utils2.default.getElement('p_0'), (0, _jquery2.default)('#t_0_0 #cell_3_3'));
+      _utils2.default.updateElementData((0, _jquery2.default)('#p_0'), data.players.p_0);
+      _utils2.default.updateCell((0, _jquery2.default)('#t_0_0 #cell_3_3'));
+    });
   });
 };
 
@@ -278,7 +280,7 @@ exports.default = function (player, direction) {
     // move the player to the new cell, and refresh their data
     _utils2.default.movePlayer(player, destinationCell);
     _utils2.default.updateElementData(player, data.players.p_0);
-    // update the cell data
+    // update the cell html
     _utils2.default.updateCell((0, _jquery2.default)(destinationCell));
     _utils2.default.updateCell((0, _jquery2.default)(oldCell));
   });
@@ -398,17 +400,29 @@ exports.default = function (cell) {
   var children = cell.children();
   for (var i = 0; i < children.length; i++) {
     if ((0, _jquery2.default)(children[i]).hasClass('player')) {
-      cell.append('<p>' + (0, _returnElementData2.default)(children[i]).name + '</p>');
+      cell.append('<p>' + _utils2.default.returnElementData(children[i]).name + '</p>');
+      _utils2.default.updateElementData((0, _jquery2.default)(cell), {
+        "data": {
+          "players": [_utils2.default.returnElementData(children[i]).name],
+          "feature": {}
+        }
+      });
     } else {
       cell.empty();
-      //  this part needs to change when cells contain more than just players
+      _utils2.default.updateElementData((0, _jquery2.default)(cell), {
+        "data": {
+          "players": [],
+          "feature": {}
+        }
+      });
+      //  this part needs to change when cells contain more than just a player
     }
   }
 };
 
-var _returnElementData = require('./returnElementData');
+var _utils = require('./utils');
 
-var _returnElementData2 = _interopRequireDefault(_returnElementData);
+var _utils2 = _interopRequireDefault(_utils);
 
 var _jquery = require('jquery');
 
@@ -420,7 +434,7 @@ var cellData = {
   "players": []
 };
 
-},{"./returnElementData":15,"jquery":22}],17:[function(require,module,exports){
+},{"./utils":19,"jquery":22}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
