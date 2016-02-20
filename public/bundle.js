@@ -34,7 +34,7 @@ exports.default = {
   'postData': postData
 };
 
-},{"superagent":23}],2:[function(require,module,exports){
+},{"superagent":24}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -74,40 +74,56 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./updateElementData":17,"jquery":21}],4:[function(require,module,exports){
+},{"./updateElementData":18,"jquery":22}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (tableId, exponent) {
+exports.default = function (tableId, exponent, returnTable) {
   var table = document.createElement('table');
 
-  table.id = tableId;
+  _utils2.default.returnDatabaseObject('tables', function (data) {
+    var tableData = data.tables[tableId];
+    table.id = tableId;
 
-  // generate rows
-  for (var i = 0; i < exponent; i++) {
-    var row = table.insertRow(i);
-    row.id = 'row_' + i;
+    // generate rows
+    for (var i = 0; i < exponent; i++) {
+      var row = table.insertRow(i);
+      row.id = 'row_' + i;
 
-    // generate cells
-    for (var j = 0; j < exponent; j++) {
-      var cell = row.insertCell(j);
-      cell.id = 'cell_' + i + '_' + j;
+      // generate cells
+      for (var j = 0; j < exponent; j++) {
+        var cell = row.insertCell(j);
+        cell.id = 'cell_' + i + '_' + j;
+      }
     }
-  }
 
-  (0, _jquery2.default)('#spawn').append(table);
+    (0, _jquery2.default)('#spawn').append(table);
+
+    for (var k = 0; k < table.rows.length; k++) {
+      var row = table.rows[k];
+      for (var l = 0; l < row.children.length; l++) {
+        var cell = row.children[l];
+        _utils2.default.updateElementData((0, _jquery2.default)(cell), data.tables[tableId][row.id][cell.id]);
+      }
+    }
+    returnTable(table);
+  });
 };
 
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _utils = require('./utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":21}],5:[function(require,module,exports){
+},{"./utils":19,"jquery":22}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -124,7 +140,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":21}],6:[function(require,module,exports){
+},{"jquery":22}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -148,16 +164,8 @@ exports.default = function () {
       direction = 'west';
     }
     if (direction !== undefined) {
-
-      _utils2.default.returnDatabaseObject('players', function (data) {
-        var player = (0, _jquery2.default)('#p_0');
-        var oldCell = _utils2.default.returnCellByDiv(player);
-        var destinationCell = _utils2.default.returnCellByDirection(_utils2.default.returnCellByDiv(player), direction);
-        _utils2.default.movePlayer(player, destinationCell);
-        _utils2.default.updateElementData(player, data.players.p_0);
-        _utils2.default.updateCell((0, _jquery2.default)(destinationCell));
-        _utils2.default.updateCell((0, _jquery2.default)(oldCell));
-      });
+      var player = (0, _jquery2.default)('#p_0');
+      _utils2.default.processMovement(player, direction);
     }
   });
 };
@@ -172,7 +180,7 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./utils":18,"jquery":21}],7:[function(require,module,exports){
+},{"./utils":19,"jquery":22}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -182,11 +190,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
   _utils2.default.returnDatabaseObject('players', function (data) {
     _utils2.default.generatePlayer(data.players.p_0);
-    _utils2.default.generateTableHtml('t_0_0', 7);
-    _utils2.default.moveElement(_utils2.default.getElement('t_0_0'), _utils2.default.getElement('board'));
-    _utils2.default.moveElement(_utils2.default.getElement('p_0'), (0, _jquery2.default)('#t_0_0 #cell_3_3'));
-    _utils2.default.updateElementData((0, _jquery2.default)('#p_0'), data.players.p_0);
-    _utils2.default.updateCell((0, _jquery2.default)('#t_0_0 #cell_3_3'));
+    _utils2.default.generateTableHtml('t_0_0', 7, function (table) {
+      _utils2.default.moveElement(table, _utils2.default.getElement('board'));
+      _utils2.default.moveElement(_utils2.default.getElement('p_0'), (0, _jquery2.default)('#t_0_0 #cell_3_3'));
+      _utils2.default.updateElementData((0, _jquery2.default)('#p_0'), data.players.p_0);
+      _utils2.default.updateCell((0, _jquery2.default)('#t_0_0 #cell_3_3'));
+    });
   });
 };
 
@@ -200,7 +209,7 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./utils":18,"jquery":21}],8:[function(require,module,exports){
+},{"./utils":19,"jquery":22}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -235,7 +244,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":21}],10:[function(require,module,exports){
+},{"jquery":22}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -256,7 +265,38 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./utils":18,"jquery":21}],11:[function(require,module,exports){
+},{"./utils":19,"jquery":22}],11:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (player, direction) {
+  _utils2.default.returnDatabaseObject('players', function (data) {
+    // get the cell you were at, and the cell you're going to
+    var oldCell = _utils2.default.returnCellByDiv(player);
+    var destinationCell = _utils2.default.returnCellByDirection(_utils2.default.returnCellByDiv(player), direction);
+    // move the player to the new cell, and refresh their data
+    _utils2.default.movePlayer(player, destinationCell);
+    _utils2.default.updateElementData(player, data.players.p_0);
+    // update the cell html
+    _utils2.default.updateCell((0, _jquery2.default)(destinationCell));
+    _utils2.default.updateCell((0, _jquery2.default)(oldCell));
+  });
+};
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _utils = require('./utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+},{"./utils":19,"jquery":22}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -292,7 +332,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":21}],12:[function(require,module,exports){
+},{"jquery":22}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -312,7 +352,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":21}],13:[function(require,module,exports){
+},{"jquery":22}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -329,7 +369,7 @@ var _ajax2 = _interopRequireDefault(_ajax);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./ajax.js":1}],14:[function(require,module,exports){
+},{"./ajax.js":1}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -349,7 +389,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":21}],15:[function(require,module,exports){
+},{"jquery":22}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -360,17 +400,29 @@ exports.default = function (cell) {
   var children = cell.children();
   for (var i = 0; i < children.length; i++) {
     if ((0, _jquery2.default)(children[i]).hasClass('player')) {
-      cell.append('<p>' + (0, _returnElementData2.default)(children[i]).name + '</p>');
+      cell.append('<p>' + _utils2.default.returnElementData(children[i]).name + '</p>');
+      _utils2.default.updateElementData((0, _jquery2.default)(cell), {
+        "data": {
+          "players": [_utils2.default.returnElementData(children[i]).name],
+          "feature": {}
+        }
+      });
     } else {
       cell.empty();
-      //  this part needs to change when cells contain more than just players
+      _utils2.default.updateElementData((0, _jquery2.default)(cell), {
+        "data": {
+          "players": [],
+          "feature": {}
+        }
+      });
+      //  this part needs to change when cells contain more than just a player
     }
   }
 };
 
-var _returnElementData = require('./returnElementData');
+var _utils = require('./utils');
 
-var _returnElementData2 = _interopRequireDefault(_returnElementData);
+var _utils2 = _interopRequireDefault(_utils);
 
 var _jquery = require('jquery');
 
@@ -382,7 +434,7 @@ var cellData = {
   "players": []
 };
 
-},{"./returnElementData":14,"jquery":21}],16:[function(require,module,exports){
+},{"./utils":19,"jquery":22}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -399,7 +451,7 @@ var _ajax2 = _interopRequireDefault(_ajax);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./ajax.js":1}],17:[function(require,module,exports){
+},{"./ajax.js":1}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -419,7 +471,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"jquery":21}],18:[function(require,module,exports){
+},{"jquery":22}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -490,6 +542,10 @@ var _listen = require('./listen');
 
 var _listen2 = _interopRequireDefault(_listen);
 
+var _processMovement = require('./processMovement');
+
+var _processMovement2 = _interopRequireDefault(_processMovement);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -508,10 +564,11 @@ exports.default = {
   'getMovementInput': _getMovementInput2.default,
   'returnCellByDirection': _returnCellByDirection2.default,
   'returnCellByDiv': _returnCellByDiv2.default,
+  'processMovement': _processMovement2.default,
   'updateCell': _updateCell2.default
 };
 
-},{"./createDatabaseObject":2,"./generatePlayer":3,"./generateTableHtml":4,"./getElement":5,"./getMovementInput":6,"./initGame":7,"./listen":8,"./moveElement":9,"./movePlayer":10,"./returnCellByDirection":11,"./returnCellByDiv":12,"./returnDatabaseObject":13,"./returnElementData":14,"./updateCell":15,"./updateDatabaseObject":16,"./updateElementData":17}],19:[function(require,module,exports){
+},{"./createDatabaseObject":2,"./generatePlayer":3,"./generateTableHtml":4,"./getElement":5,"./getMovementInput":6,"./initGame":7,"./listen":8,"./moveElement":9,"./movePlayer":10,"./processMovement":11,"./returnCellByDirection":12,"./returnCellByDiv":13,"./returnDatabaseObject":14,"./returnElementData":15,"./updateCell":16,"./updateDatabaseObject":17,"./updateElementData":18}],20:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -530,7 +587,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   _utils2.default.listen();
 });
 
-},{"./utils":18,"jquery":21}],20:[function(require,module,exports){
+},{"./utils":19,"jquery":22}],21:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -693,7 +750,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0
  * http://jquery.com/
@@ -10526,7 +10583,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 
 /**
  * Reduce `arr` with `fn`.
@@ -10551,7 +10608,7 @@ module.exports = function(arr, fn, initial){
   
   return curr;
 };
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -11744,4 +11801,4 @@ request.put = function(url, data, fn){
 
 module.exports = request;
 
-},{"emitter":20,"reduce":22}]},{},[19]);
+},{"emitter":21,"reduce":23}]},{},[20]);
