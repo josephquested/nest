@@ -230,12 +230,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 exports.default = function (element, destination) {
-	element.remove();
-	destination.append(element);
+  element.remove();
+  destination.append(element);
 };
 
 var _jquery = require('jquery');
@@ -418,6 +418,14 @@ exports.default = function (cell) {
       //  this part needs to change when cells contain more than just a player
     }
   }
+
+  var cellData = _utils2.default.returnElementData((0, _jquery2.default)(cell));
+  var row = (0, _jquery2.default)(cell).closest('tr');
+  var table = (0, _jquery2.default)(cell).closest('table');
+
+  _utils2.default.returnDatabaseObject("tables", function (data) {
+    data.tables[table.attr('id')][row.attr('id')][cell.attr('id')] = cellData;
+  });
 };
 
 var _utils = require('./utils');
@@ -430,10 +438,6 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var cellData = {
-  "players": []
-};
-
 },{"./utils":19,"jquery":22}],17:[function(require,module,exports){
 'use strict';
 
@@ -441,8 +445,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (database, object, returnData) {
-  _ajax2.default.postData(database, object, returnData);
+exports.default = function (database, object, callback) {
+  _ajax2.default.postData(database, object, callback);
 };
 
 var _ajax = require('./ajax.js');
@@ -465,13 +469,7 @@ exports.default = function (element, data) {
   element.data('data', data);
 };
 
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-},{"jquery":22}],19:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
