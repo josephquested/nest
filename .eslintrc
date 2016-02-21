@@ -1,0 +1,20 @@
+{
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "import": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+  },
+  "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+    },
+}
